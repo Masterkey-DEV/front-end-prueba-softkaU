@@ -35,10 +35,10 @@ function Login() {
   });
 
   const handleSubmitForm = handleSubmit(async (data) => {
+    console.log(data);
     setLoading(true);
     try {
-      console.log(data);
-      const response = await fetch("http://localhost:3000/user/login", {
+      const response = await fetch("http://localhost:3001/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,6 +48,7 @@ function Login() {
       });
 
       const responseData = await response.json();
+      console.log(responseData);
       if (response.ok) {
         localStorage.setItem("previousAccess", JSON.stringify(true));
         router.push("/bingo");
@@ -103,7 +104,7 @@ function Login() {
         <button
           type="submit"
           disabled={loading} // Deshabilitar mientras carga
-          className={`bg-sky-400 hover:bg-sky-500 text-slate-800 px-4 py-2 rounded-md ${
+          className={`bg-sky-400 hover:bg-sky-500 hover:shadow-md text-slate-800 px-4 py-2 rounded-md ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
@@ -114,7 +115,7 @@ function Login() {
           No tienes una cuenta?{" "}
           <span
             onClick={handleRegister}
-            className="underline  text-blue-800 cursor-pointer"
+            className="underline  text-blue-800 cursor-pointer hover:text-blue-700 hover:shadow-sm"
           >
             Regístrate
           </span>

@@ -40,7 +40,7 @@ function Register() {
   const handleSubmitForm = handleSubmit(async (data) => {
     console.log(data);
     // Enviar datos a la API
-    const response = await fetch("http://localhost:3000/user/create", {
+    const response = await fetch("http://localhost:3001/user/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -122,14 +122,14 @@ function Register() {
 
         <button
           type="submit"
-          className="bg-sky-400 hover:bg-sky-500 text-slate-800 px-4 py-2 rounded-md"
+          className="bg-sky-400 hover:bg-sky-500 hover:shadow-md text-slate-800 px-4 py-2 rounded-md"
         >
           Register
         </button>
         <p>
           ya tienes una cuenta?{" "}
           <span
-            className="underline text-blue-800 cursor-pointer"
+            className="underline text-blue-800 cursor-pointer hover:shadow-sm"
             onClick={handleLogin}
           >
             Iniciar sesión

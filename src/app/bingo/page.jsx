@@ -14,15 +14,13 @@ const HomePage = () => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000", {
+    const newSocket = io("http://localhost:3001", {
       withCredentials: true,
     });
 
     setSocket(newSocket);
 
-    newSocket.on("connect", () => {
-      console.log("Connected to server");
-    });
+    newSocket.on("connect", () => {});
 
     newSocket.on("game_card", (card) => {
       let cardValues = [];
@@ -36,6 +34,10 @@ const HomePage = () => {
 
     newSocket.on("current_players", (players) => {
       setPlayers(players);
+    });
+
+    newSocket.on("waiting_players", (waitingPlayers) => {
+      setPlayers(waitingPlayers);
     });
 
     newSocket.on("game_start", () => {
@@ -97,7 +99,6 @@ const HomePage = () => {
       {timer === 30 ? (
         <div>
           <p>En espera de más jugadores</p>
-          <p>jugadores actuales: {players}</p>
         </div>
       ) : timer > 1 ? (
         <div className="text-center">

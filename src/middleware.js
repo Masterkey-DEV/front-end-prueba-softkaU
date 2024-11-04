@@ -7,7 +7,7 @@ export async function middleware(request) {
   }
 
   try {
-    const userResponse = await fetch("http://localhost:3000/user/getUser", {
+    const userResponse = await fetch("http://localhost:3001/user/getUser", {
       method: "GET",
       credentials: "include",
       headers: {
@@ -17,8 +17,6 @@ export async function middleware(request) {
     });
 
     if (!userResponse.ok) {
-      console.log("No se ha podido conectar al servidor");
-      console.log(token);
       return NextResponse.redirect(new URL(route, request.url));
     }
   } catch {
