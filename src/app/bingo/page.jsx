@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { io } from "socket.io-client";
 import { Square } from "@/app/components/Square";
 
-const HomePage = () => {
+const Bingo = () => {
   const router = useRouter();
   const [timer, setTimer] = useState(30);
   const [players, setPlayers] = useState(0);
@@ -127,4 +127,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Bingo;

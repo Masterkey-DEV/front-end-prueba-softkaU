@@ -50,7 +50,7 @@ function Login() {
       const responseData = await response.json();
       console.log(responseData);
       if (response.ok) {
-        localStorage.setItem("previousAccess", JSON.stringify(true));
+        sessionStorage.setItem("previousAccess", JSON.stringify(true));
         router.push("/bingo");
       } else {
         setError(responseData.message);

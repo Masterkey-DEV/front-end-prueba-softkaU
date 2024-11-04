@@ -4,24 +4,19 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [previousAccess, setPreviousAccess] = useState(null);
-  const [isHydrated, setIsHydrated] = useState(false); // Nueva bandera de hidratación
   const router = useRouter();
 
   useEffect(() => {
-    // Marca el componente como hidratado
-    setIsHydrated(true);
-
-    // Solo accede a localStorage después de la hidratación
-    const access = JSON.parse(localStorage.getItem("previousAccess") || "null");
+    const access = JSON.parse(
+      sessionStorage.getItem("previousAccess") || "null"
+    );
+    console.log(access);
     setPreviousAccess(access);
   }, []);
 
   const handlePlay = () => {
     router.push("/bingo");
   };
-
-  // Evita el renderizado hasta que la hidratación esté completa
-  if (!isHydrated) return null;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
