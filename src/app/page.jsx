@@ -3,12 +3,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [previousAccess, setPreviousAccess] = useState(null);
+  const [previousAccess, setPreviousAccess] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     const access = JSON.parse(
-      sessionStorage.getItem("previousAccess") || "null"
+      sessionStorage.getItem("previousAccess") || false
     );
     console.log(access);
     setPreviousAccess(access);

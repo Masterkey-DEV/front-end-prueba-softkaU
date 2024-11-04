@@ -38,7 +38,6 @@ function Register() {
   });
 
   const handleSubmitForm = handleSubmit(async (data) => {
-    console.log(data);
     // Enviar datos a la API
     const response = await fetch("http://localhost:3001/user/create", {
       method: "POST",
