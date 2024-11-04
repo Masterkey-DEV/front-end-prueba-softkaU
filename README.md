@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto Bingo
 
-## Getting Started
+Hola muy buenos dias tardes y noches este es el desarrollo de mi prueba tecnica Bingo para el training de sofka U
 
-First, run the development server:
+## Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- las tecnologia sque use para el fronend han sido react y next js para el desarrolo de el front end
+- utlice las herramientas del peopio next para crear midlewares rutas y redirecciones
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Descripción
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- cuando un usuario ingresa es llevado a la pagina de incio la cual lo saluda dependiendo de si ya ah ingresado con anterioridad o no
+- en la landing page se encuentra un boton de jugar el cual redirge a la ruta de bingo
+- la ruta de bingo cuenta con un midleware que verifica si el usuario ya se ah logeado de no haberlo hecho es redirigido al login
+- en la pagina de bingo se muestra la targeta generada en el backend el numero de jugadores y el tiempo antes de iniciar una nueva partida
+- al inciar la partida se muestran los numeros generados en el backend el boton de bingo y se permite marcar en la targeta cualquiera de los numeros deseados por el jugador
+- al marcar el boton de bingo el backend verifica el que halla ganado de haberlo o no hecho se muestra una alerta mostrando el resultado y se redirige a la pagina de inicio
+- si algun jugador ah gando se les redigrige a todos a la pagina d inicio
+- si el numero de jugadores es insuficiente el backend les notifica de ello y es redirigido al inio xD.
